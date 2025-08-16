@@ -20,15 +20,15 @@
         </li>
         <li {% if mnTemas %}class="active"{% endif %}>
           <a data-toggle="dropdown" href="#"><i class="fa fa-folder-open"></i> Temas <span class="caret"></span></a>
+          {#
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            {#
             <li {% if cats == 'webdev'%}class="active"{% endif %}><a href="{% url 'categoria' 'webdev' %}">Desarrollo Web</a></li>
             <li {% if cats == 'python'%}class="active"{% endif %}><a href="{% url "categoria" "python" %}">Python</a></li>
             <li {% if cats == 'django'%}class="active"{% endif %}><a href="{% url "categoria" "django" %}">Django</a></li>
             <li {% if cats == 'wordpress'%}class="active"{% endif %}><a href="{% url "categoria" "wordpress" %}">WordPress</a></li>
             <li {% if cats == 'calidad'%}class="active"{% endif %}><a href="{% url "categoria" "calidad" %}">Calidad</a></li>
-            #}
           </ul>
+          #}
         </li>
         <li><a href="/contacto/" title="Formulario de Contacto"><i class="fa fa-envelope"></i> Contacto</a></li>
         <li><a href="/politica/" title="Política de Privacidad"><i class="fa fa-shield"></i> Política</a></li>
