@@ -38,10 +38,10 @@ class Category(TimeStampedModel):
         return self.title
 
     def permalink(self):
-        return '/categoria/%s/' % self.slug
+        return '/category/%s/' % self.slug
 
     def get_absolute_url(self):
-        return 'https://namespace.mx/categoria/%s/' % self.slug
+        return 'https://toledano.dev/category/%s/' % self.slug
 
 
 class Entry(TimeStampedModel):
