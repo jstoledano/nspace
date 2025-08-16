@@ -96,9 +96,9 @@ class Entry(TimeStampedModel):
 
     def resumen(self):
         if self.excerpt:
-            return unicode(self.excerpt)
+            return str(self.excerpt)
         else:
-            return unicode(self.body_html)
+            return str(self.body_html)
 
     def permalink(self):
         return "/%s/%s/" % (self.category.slug, self.slug)
