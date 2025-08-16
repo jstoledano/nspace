@@ -108,7 +108,6 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-BITLY_LOGIN = env('BITLY_LOGIN', default='')
-BITLY_API_KEY = env('BITLY_API_KEY', default='')
+
 
 
