@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+    {% load staticfiles %}
+    {% load nspace_extras %}
+<html lang="es_MX">
+  <head>
+    {# Mobile First #}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    {# Meta informacion del sitio #}
+    <title>{% block title %}namespace.mx - Hablamos de Desarrollo Web{% endblock title %}</title>
+    <meta name="description" content="{% block meta_description %}namespace.mx - Hablamos de Desarrollo Web{% endblock meta_description %}">
+    <meta name="keywords" content="{% block metakeywords %}programming, web develpoing, desarrollo web,node.js, jquery python, django, html5{% endblock metakeywords %}">
+    <meta name="author" content="Javier Sanchez Toledano">
+
+    {% block meta_header %}{% endblock meta_header %}
+
+    {% block metagoogle   %}{% endblock metagoogle   %}
+    {% block metafacebook %}{% endblock metafacebook %}
+    {% block metatwitter  %}{% endblock metatwitter  %}
+    {% block metaheader   %}{% endblock metaheader   %}
+
+    {% include "koding/modules/ie8.html" %}   
+    {% include "koding/modules/icons.html" %}
+    {% include "koding/modules/feeds.html" %}
+
+  </head>
+
+  <body>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PQQ8BZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PQQ8BZ');</script>
+    <!-- End Google Tag Manager -->
+
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    {% block header_navigation %}
+      {% include "koding/modules/navigation.html"  %}
+    {% endblock header_navigation %}
+
+    {% block before_main %}{% endblock before_main %}
+    {% block main %}
+      <main id="content" role="sitemap">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              {% block before_content %}{% endblock before_content %}
+              {% block content %}{% endblock content %}
+              {% block after_content %}{% endblock after_content %}
+            </div>
+            <aside class="col-md-4" id="sidebar">
+              <div class="row">
+                {% block before_widgets %}{% endblock before_widgets %}
+                {% include "koding/modules/widget_buscar.html" %}
+                {% block ads_sidebar %}
+                <div class="col-md-12 ads">
+                  <!-- nspace_01 -->
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-9466828947698623"
+                       data-ad-slot="5225523689"
+                       data-ad-format="auto"></ins>
+                  <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                </div>
+                {% endblock ads_sidebar %}                
+                {% include "koding/modules/widget_tagcloud.html" %}
+                {% include "koding/modules/widget_googlebadge.html" %}
+                {% block middle_widgets %}{% endblock middle_widgets %}
+                {% block after_widgets %}{% endblock after_widgets %}
+              </div>
+            </aside>
+          </div>
+        </div>
+        <div id="push"></div>
+      </main>
+    {% endblock main %}
+    {% block after_main %}{% endblock after_main %}
+
+  {% block footer %}
+    {% include "koding/modules/footer.html" %}
+  {% endblock footer %}
+  {% block js_footer %}{% endblock js_footer %}
+</body>
+</html>
+    <link rel="stylesheet" href="https://d2rislaex5z39o.cloudfront.net/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://d2rislaex5z39o.cloudfront.net/assets/css/nspace.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> 

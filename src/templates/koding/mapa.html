@@ -1,0 +1,44 @@
+{% extends 'koding/base.html' %}
+
+{% block before_main %}
+<div class="bs-header" id="content" role="masthead">
+  <div class="container">
+    <h1><i class="fa fa-sitemap"></i> Mapa del Sitio</h1>
+    <p>Aquí encontrarás todos los artículos publicados en <strong>{{SITENAME}}</strong> hasta el día de hoy.</p>
+  </div>
+</div>
+{% endblock before_main %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-5">
+    <h3>Páginas</h3>
+    <ul>
+      <!-- listado de páginas -->
+      {% for page in flats %}
+      <li><a href="{{page.get_absolute_url}}">{{page.title}}</a></li>
+      {% endfor %}
+    </ul>
+    <h3>Categorías</h3>
+    <ul>
+      {% for cat in cats %}
+        <li><a href="{% url "categoria" cat.slug %}">{{cat.title}}</a></li>
+      {% endfor %}
+    </ul>
+    <h3>Meses</h3>
+    <ul>
+      {% for mes in meses %}
+        <li><a href="{{mes|date:'/Y/m/'}}">{{mes|date:"F \d\e\l Y"}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col-md-7">
+    <h3>Artículos</h3>
+    <ul>
+      {% for entry in entries %}
+      <li><a href="{{entry.permalink}}">{{entry.title}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock content %}

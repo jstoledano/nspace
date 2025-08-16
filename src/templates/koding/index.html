@@ -1,0 +1,25 @@
+{% extends 'koding/base.html' %}
+
+{% block before_main %}
+<!-- Page content of course! -->
+<section class="bs-header" id="content" role="masthead">
+  <div class="container">
+    <h1>namespace.mx</h1>
+    <p class="lead">Hablamos de Desarrollo Web</p>
+  </div>
+</section>
+{% endblock before_main %}
+
+{% block meta_description %}En este blog, doy cuenta de lo que aprendo sobre Desarrollo Web. Me estoy enfocando en Python, Django, WordPress y Node.JS. Tutorial, guías y resolución de problemas.{% endblock meta_description %}
+
+{% block meta_header %}<meta name="google-site-verification" content="lUEIFOGKbPXDMbcAL3qMI26HQifLgmyxx6B_9yIoavg" />
+<meta name="msvalidate.01" content="833852B0DF1AB0F94B9D46983D2F6DEE" />{% endblock meta_header %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Artículos Recientes</h1>
+</div>
+{% include "koding/modules/archivo.html" %}
+
+{% include "koding/modules/pagination.html" %}
+{% endblock content %}

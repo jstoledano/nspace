@@ -1,0 +1,5 @@
+<ul class="entradas_recientes">
+  {% for entry in entries %}
+  <li><a href="{{entry.permalink}}">{{entry.title}}</a></li>
+  {%endfor%}  
+</ul>

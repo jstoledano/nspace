@@ -1,0 +1,39 @@
+{% for article in object_list %}
+  <article class="col-sm-12 post category-{{ article.category }} {% for t in article.tags.all %}tag-{{ t.slug }} {% endfor %} entry archive" itemscope="blogPost" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    
+    <meta itemprop="headline" content="{{ article.title }}">
+    <meta itemprop="image" content="https://d2rislaex5z39o.cloudfront.net/assets/img/{{ article.category.slug }}.jpg">
+    <meta itemprop="name" content="{{  article.title  }}">
+    <meta itemprop="url" content="https://namespace.mx{{ article.permalink }}">
+    <meta itemprop="datePublished" content="{{ article.pub_date.isoformat }}">
+    <meta itemprop="inLanguage" content="es-mx">
+    <meta itemprop="publisher" content="https://plus.google.com/u/0/b/114479924547493244689">
+    <meta itemprop="author" content="Javier Sanchez Toledano"
+    <meta itemprop="url" itempscope="author" content="https://plus.google.com/101952609541294075590/about">
+  
+    <header class="post-header">
+      <h3 itemprop="name" class="post-title"><a href="{{ article.permalink }}">{{ article.title }}</a></h3>
+      {% include "koding/modules/postbit.html" %}
+    </header>
+    <section class="post-excerpt">
+      <div itemprop="description">
+        {{ article.body_html|striptags|truncatechars:350 }}
+      </div>
+      <p><a class="btn btn-primary" href="{{ article.permalink }}" title="Sigue leyendo &ldquo;{{ article.title }}&rdquo;">Sigue leyendo</a></p>
+    </section>
+  </article>
+  <section class="col-sm-12">
+    {% if forloop.counter == 1 or forloop.counter == 3 %}
+      <div class="adsense">    
+        <!-- cyberia.336x289.01.top -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:336px;height:280px"
+             data-ad-client="ca-pub-9466828947698623"
+             data-ad-slot="8590866557"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    {% endif %}
+  </section>
+{% endfor %}

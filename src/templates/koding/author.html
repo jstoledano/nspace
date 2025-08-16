@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}{{author}} en {{SITENAME}}{% endblock %}
+{% block meta_description %}
+  Aquí encontrarás todos los artículos publicados en {{SITENAME}} escritos por {{ author }}
+{% endblock meta_description %}
+{% block meta_header %}
+  <meta name="robots" content="noindex,nofollow">
+{% endblock meta_header %}
+
+{% block before_main %}
+<div class="nspace-header" id="content">
+  <div class="container">
+    <h1><i class="fa fa-user"></i> {{ author }}</h1>
+    <p>
+      Aquí encontrarás todos los artículos publicados en {{SITENAME}} escritos por {{ author }}
+    </p>
+  </div>
+</div>
+{% endblock before_main %}
+
+{% block content %}
+  {% include "modules/archivo.html" %}
+
+  {% if DEFAULT_PAGINATION %}
+    {% include "modules/pagination.html" %}
+  {% endif %}
+{% endblock content %}

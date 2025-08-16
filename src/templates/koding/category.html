@@ -1,0 +1,22 @@
+{% extends 'koding/base.html' %}
+
+{% block title %}Categoría {{cat}} en namespace.mx{% endblock %}
+{% block meta_description %}{{ cat.description }}{% endblock %}
+{% block meta_header %}<meta name="robots" content="noindex,nofollow"/>{% endblock meta_header %}
+
+
+{% block before_main %}
+<div class="bs-header" id="content" role="masthead">
+  <div class="container">
+    <h1><i class="fa fa-folder-open"></i> {{ cat }}</h1>
+    <p>{{ cat.description }}</p>
+  </div>
+</div>
+{% endblock before_main %}
+
+{% block content %}
+{% include "koding/modules/archivo.html" %}
+
+{% include "koding/modules/pagination.html" %}
+{% endblock content %}
+

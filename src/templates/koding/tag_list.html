@@ -1,0 +1,38 @@
+{% extends 'koding/base.html' %}
+
+{% block title %}Nube de Etiquetas en namespace.mx{% endblock %}
+{% block meta_description %}Estas son las etiquetas más utilizadas en namespace.mx{% endblock %}
+{% block meta_header %}<meta name="robots" content="noindex"/>{% endblock meta_header %}
+
+
+{% block before_main %}
+<div class="bs-header" id="content" role="masthead">
+  <div class="container">
+    <h1><i class="fa fa-tags"></i> Nube de Etiquetas</h1>
+    <p>Estas son las etiquetas más utilizadas en <strong>namespace.mx</strong></p>
+  </div>
+</div>
+{% endblock before_main %}
+
+{% block content %}
+<div class="col-sm-12 col-md-offset-2 col-md-8">
+  {% load taggit_extras %}
+    {% get_tagcloud as tags %}
+    {% for tag in tags %}
+      <a href="/tag/{{tag.name|slugify}}" rel="nofollow"><font size={{tag.weight|floatformat:0}}>{{tag}}</font></a>
+    {% endfor %}
+
+  <section class="adsense">
+    <!-- cyberia.336x289.01.top -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:336px;height:280px"
+         data-ad-client="ca-pub-9466828947698623"
+         data-ad-slot="8590866557"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
+
+</div>
+
+{% endblock content %}

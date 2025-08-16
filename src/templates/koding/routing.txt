@@ -1,0 +1,10 @@
+{% for article in articles %}
+<RoutingRule>
+  <Condition>
+     <KeyPrefixEquals>{{ article.category.slug}}/{{article.slug}}/</KeyPrefixEquals>
+  </Condition>
+  <Redirect>
+    <ReplaceKeyWith>{{ article.category.slug }}/{{article.slug}}.html</ReplaceKeyWith>
+  </Redirect>
+</RoutingRule>
+{% endfor %}

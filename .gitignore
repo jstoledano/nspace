@@ -1,0 +1,29 @@
+# Ignorar el contenido de directorios específicos, pero mantener los directorios
+backup/*
+!backup/.gitkeep
+cert/*
+!cert/.gitkeep
+logs/*
+!logs/.gitkeep
+run/*
+!run/.gitkeep
+src/media/*
+!src/media/.gitkeep
+
+# Archivos de Python
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+db.sqlite3
+
+# Archivos de IDE y editores
+.idea/
+.project
+.pydevproject
+.settings/
+*.swp
+
+# Dependencias (si se usa un entorno virtual)
+venv/
+env/

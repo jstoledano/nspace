@@ -1,0 +1,5 @@
+<ul class="tagcloud">
+  {% for tag in tags %}
+  <li class="tag-{{tag.clase}}"><a href="{% url 'tag' tag.slug %}"><span>{{tag.slug|safe}}</a></li>
+  {% endfor %}
+</ul>

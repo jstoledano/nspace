@@ -1,0 +1,8 @@
+User-Agent: *
+
+# Mapa de contenido
+Sitemap: https://namespace.mx/sitemap.xml
+
+Disallow: /admin/
+Disallow: /tag/
+Disallow: /buscar/

@@ -1,0 +1,30 @@
+{% extends 'koding/base.html' %}
+
+{% block before_main %}
+<div class="bs-header" id="content" role="masthead">
+  <div class="container">
+    <h1><i class="fa fa-sitemap"></i> Buscardor</h1>
+    <p>Resultados de tu búsqueda</p>
+  </div>
+</div>
+{% endblock before_main %}
+
+{% block meta_header %}
+<meta name="robots" content="noindex,nofollow">
+<script>
+  (function() {
+    var cx = '010039856388904811619:yxu3saakety';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+{% endblock %}
+
+{% block content %}
+  <gcse:searchresults-only></gcse:searchresults-only>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'koding/base.html' %}
+
+{% block meta_title %}{{ flatpage.title }}{% endblock meta_title %}
+
+{% block before_main %}
+<div class="bs-header" id="content" role="masthead">
+  <div class="container">
+    <h1>{{ flatpage.title }}</h1>
+    <p>namespace.mx</p>
+  </div>
+</div>
+{% endblock before_main %}
+
+{% block content %}
+  {{ flatpage.content }}
+{% endblock content %}
+

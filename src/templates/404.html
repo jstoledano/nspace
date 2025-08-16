@@ -1,0 +1,30 @@
+{% extends 'koding/base.html' %}
+
+{% block title %}Error 404 | namespace.mx{% endblock title %}
+{% block meta_description %}Error 404: No encontré la página solicitada{% endblock meta_description %}
+{% block metakeywords %}{% endblock metakeywords %}
+
+{% block main %}{% endblock main %}
+{% block header_navigation %}{% endblock header_navigation %}
+{% block footer %}{% endblock footer %}
+
+{% block before_main %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron center">
+        <h1>Página no encontrada <small><font color="red">Error 404</font></small></h1>
+        <br>
+        <p>
+          No encontré la página que solicitaste, puedes intentarlo de nuevo o contactar con el webmaster. Usa el botón <strong>Regresar</strong> de tu navegador para ir a dónde estabas antes
+        </p>
+        <p>
+          <strong>O usa el botón este botón: </strong> <a href="/" class="btn btn-lgchr btn-info"><i class="fa fa-home"></i> Ir a la portada
+          </a>
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock before_main %}

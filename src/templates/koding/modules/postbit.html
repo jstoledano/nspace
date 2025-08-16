@@ -1,0 +1,17 @@
+<span class="post-meta">
+  <i class="fa fa-calendar"></i> 
+    <time itemprop='datePublished' datetime="{{ article.pub_date.isoformat }}">{{ article.pub_date|date:"E d, Y"  }}</time>
+  &bull; <i class="fa fa-folder-open"></i> 
+    Categoría: <a href="{% url "categoria" article.category.slug %}">{{ article.category }}</a>
+  {% if article.tags.count > 0 %}&bull; <i class="fa fa-tags"></i> 
+    Etiquetas: {% for t in article.tags.all %}<a href="{% url 'tag' t.slug %}">{{ t }}</a>{% if forloop.last %}{% else %},{% endif %} {% endfor %}{% endif %}
+    <span class="pull-right">
+      <div class="g-plusone" 
+           data-size="small" 
+           data-href="{{article.get_absolute_url}}"
+           data-annotation="inline" 
+           data-width="200" 
+           data-align="right"
+           expandTo="left"></div>
+    </span>
+</span>

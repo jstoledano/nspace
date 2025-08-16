@@ -1,0 +1,87 @@
+{% extends 'koding/base.html' %}
+{% load staticfiles %}
+{% load nspace_extras %}
+
+{% block title %}{{ article.title|striptags }} | namespace.mx {% endblock title %}
+{% block meta_description %}{{ article.body_html|striptags|truncatechars:150 }}{% endblock meta_description %}
+{% block metakeywords %}{% for t in article.tags.all %}{{ t }} {% endfor %}{% endblock metakeywords %}
+
+{% block metatwitter %}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@namespacemx">
+  <meta name="twitter:domain" content="namespace.mx">
+  <meta name="twitter:creator" content="@jstoledano">
+  <meta name="twitter:url" content="https://namespace.mx{{ article.permalink }}">
+  <meta name="twitter:title" content="{{ article.title|striptags }}">
+  <meta name="twitter:description" content="{{ article.body_html|striptags|truncatechars:150 }}">
+  <meta name="twitter:image" content="https://d2rislaex5z39o.cloudfront.net/assets/img/{{ article.category.slug }}.jpg">
+{% endblock metatwitter %}
+
+{% block metafacebook %}
+  <meta property="og:site_name" content="namespace.mx - Hablamos de Desarrollo Web">
+  <meta property="og:locale" content="es_LA">
+  <meta property="fb:app_id" content="460660550709131">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ article.title|striptags }}">
+  <meta property="og:image" content="https://d2rislaex5z39o.cloudfront.net/assets/img/{{ article.category.slug }}.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="700">
+    <meta property="og:image:height" content="200">
+  <meta property="og:description" content="{{ article.body_html|striptags|truncatechars:150 }}">
+  <meta property="og:url" content="https://namespace.mx{{ article.permalink }}">
+{% endblock metafacebook %}
+
+{%block metagoogle%}
+  <link rel="canonical" href="{{ article.get_absolute_url }}">
+  <link rel="shortlink" type="text/html" href="{{ article.bitly }}">
+{%endblock metagoogle%} 
+
+{% block metaheader %}
+  {% for tag in article.tags.all %}<meta name="tag" contents="{{tag}}" />{% endfor %}
+{% endblock metaheader %}
+
+{% block js_footer %}
+{% include 'koding/modules/disqus.html' %}
+{% endblock js_footer %}
+
+{% block content %}
+<div class="page-header">
+  <h1  itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="name">{{ article.title }}</h1>
+</div>
+
+<article class="post col-sm-12" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+  <meta itemprop="name" content="{{ article.title }}">
+  <meta itemprop="headline" content="{{ article.title }}">
+  <meta itemprop="description" content="{{ article.body_html|striptags|truncatechars:150 }}">
+  <meta itemprop="image" content="//d2rislaex5z39o.cloudfront.net/assets/img/{{ article.category.slug }}.jpg">
+  <meta itemprop="name" content="{{  article.title  }}">
+  <meta itemprop="url" content="https://namespace.mx{{ article.permalink }}">
+  <meta itemprop="datePublished" content="{{ article.pub_date.isoformat }}">
+  <meta itemprop="inLanguage" content="es-mx">
+  <meta itemprop="publisher" content="https://plus.google.com/u/0/b/114479924547493244689">
+  
+  {% include "koding/modules/breadcrumb.html" %}
+  {% include "koding/modules/postbit.html" %}
+
+  <section class="post-content" itemprop="articleBody">
+    <img id="cortinilla" src='//d2rislaex5z39o.cloudfront.net/assets/img/{{ article.category.slug }}.jpg' alt='{{ article.category }}' title='{{ article.category }}'>
+    {{ article.body_html|safe }}
+  </section><!-- ./post-content -->
+
+  <section class="col-md-12 about">
+    <div class="row">      
+      {% include "koding/modules/author-info.html" %}
+      {% include "koding/modules/sharing.html" %}
+    </div>
+  </section>
+
+  <section class="col-sm-12 about comments">
+    <h4><i class="icon-comments-4"></i> Deja un comentario</h4>
+    <div class="media">
+      <div id="disqus_thread"></div>
+    </div>
+  </section>
+
+</article>
+
+{% endblock content%}

@@ -1,0 +1,17 @@
+<section class="share col-md-6">
+  <h4><i class="icon-share-4"></i> Comparte este artículo</h4>
+  <div class="sharing center-block">
+    <a class="boton-twitter" href="https://twitter.com/share?text={{article.title}}&amp;url={{ article.get_absolute_url }}"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <i class="fa fa-twitter-square"></i> Twitter
+    </a>
+    <a class="boton-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{article.get_absolute_url }}"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <i class="fa fa-facebook-square"></i> Facebook
+    </a>
+    <a class="boton-google" href="https://plus.google.com/share?url={{ article.get_absolute_url }}"
+      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <i class="fa fa-google-plus-square"></i> Google+
+    </a>
+  </div>
+</section><!-- ./share -->
