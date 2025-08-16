@@ -82,8 +82,8 @@ class Entry(TimeStampedModel):
     autor           = models.ForeignKey(User, related_name='entradas', editable=False, on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name_plural = 'Entradas'
-        verbose_name        = 'Entrada'
+        verbose_name_plural = 'Entries'
+        verbose_name        = 'Entry'
         ordering            = ['-id', '-pub_date']
         unique_together     = ('slug', 'pub_date')
 
