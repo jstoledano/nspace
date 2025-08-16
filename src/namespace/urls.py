@@ -11,6 +11,7 @@ from blog.views import BlogSitemap
 from core.views import mapa, robots
 
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 # admin.autodiscover() is no longer needed in modern Django
 
 sitemaps = { "blog": BlogSitemap }
@@ -22,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('rss/', BlogFeed()),
     path('<slug:cat>/<slug:slug>/', EntradaIndividual.as_view(), name='post'),    
-    path('sitemap.xml', include('django.contrib.sitemaps.views.sitemap')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}), # Pass sitemap function directly
     path('robots.txt', robots),
     path('tag/', tags_list, name='tags'),
     path('tag/<slug:tag_slug>', TagListView.as_view(), name='tag'),
