@@ -12,6 +12,8 @@ beautifulsoup4==4.13.4
     # via -r src/requirements.in
 billiard==4.2.1
     # via celery
+bitly-api==0.3
+    # via -r src/requirements.in
 celery==5.5.3
     # via -r src/requirements.in
 click==8.2.1
@@ -29,19 +31,27 @@ click-repl==0.3.0
 django==4.2.23
     # via
     #   -r src/requirements.in
+    #   django-annoying
     #   django-braces
     #   django-debug-toolbar
+    #   django-humanize
     #   django-taggit
+django-annoying==0.10.8
+    # via -r src/requirements.in
 django-braces==1.17.0
     # via -r src/requirements.in
 django-debug-toolbar==6.0.0
     # via -r src/requirements.in
 django-environ==0.12.0
     # via -r src/requirements.in
+django-humanize==0.1.2
+    # via -r src/requirements.in
 django-taggit==6.1.0
     # via -r src/requirements.in
 gunicorn==23.0.0
     # via -r src/requirements.in
+humanize==4.12.3
+    # via django-humanize
 kombu==5.5.4
     # via celery
 markdown==3.8.2
@@ -61,7 +71,9 @@ python-memcached==1.62
 redis==6.4.0
     # via -r src/requirements.in
 six==1.17.0
-    # via python-dateutil
+    # via
+    #   django-annoying
+    #   python-dateutil
 soupsieve==2.7
     # via beautifulsoup4
 sqlparse==0.5.3
