@@ -19,7 +19,6 @@ from taggit.managers import TaggableManager
 from bs4 import BeautifulSoup
 import datetime
 import markdown
-import bitly_api
 import os
 
 
@@ -73,7 +72,6 @@ class Entry(TimeStampedModel):
     featured        = models.BooleanField(default=False)
     slug            = models.SlugField(unique_for_date='pub_date')
     status          = models.IntegerField(choices=STATUS_CHOICES, default=LIVE_STATUS)
-    bitly           = models.URLField(editable=False, blank=True)
 
     # Taxonomía
     category        = models.ForeignKey(Categoria)
@@ -97,9 +95,6 @@ class Entry(TimeStampedModel):
             self.excerpt_html = markdown.markdown(self.excerpt, output_format='html5', lazy_ol=True, extensions=MD_EXT)
         if self.extend:
             self.extend_html  = markdown.markdown(self.extend, output_format='html5', lazy_ol=True, extensions=MD_EXT)
-        bitly = bitly_api.Connection(access_token=base.BITLY_API_KEY)
-        data = bitly.shorten("https://namespace.mx/%s/%s/" % (self.category.slug, self.slug))
-        self.bitly = data['url']
         super(Entry, self).save(force_insert, force_update)
 
     def resumen(self):
