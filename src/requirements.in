@@ -1,0 +1,34 @@
+#
+# In this file, you should specify the direct dependencies of your project.
+#
+# For example:
+#
+#   requests
+#   Django
+#
+# After making changes to this file, you should run the following command
+# to update the `requirements.txt` file:
+#
+#   pip-compile src/requirements.in
+#
+
+# Core Framework
+Django~=4.2.0
+
+# Database
+psycopg2-binary
+
+# Async Tasks
+celery
+redis
+
+# Caching
+python-memcached
+
+# WSGI Server
+gunicorn
+
+# Django Packages
+django-debug-toolbar
+django-braces
+django-taggit
