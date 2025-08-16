@@ -7,7 +7,6 @@
 #      version: 0.1.0
 
 # Configuración ConxB
-from namespace.settings import base
 from core.models import TimeStampedModel
 
 # Desde django
@@ -16,10 +15,8 @@ from django.contrib.auth.models import User
 
 # Desde Python
 from taggit.managers import TaggableManager
-from bs4 import BeautifulSoup
 import datetime
 import markdown
-import os
 
 
 MD_EXT = ['codehilite', 'meta', 'abbr', 'attr_list', 'def_list', 'fenced_code', 'footnotes', 'smart_strong', 'tables',
