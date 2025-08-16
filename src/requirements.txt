@@ -44,6 +44,8 @@ gunicorn==23.0.0
     # via -r src/requirements.in
 kombu==5.5.4
     # via celery
+markdown==3.8.2
+    # via -r src/requirements.in
 packaging==25.0
     # via
     #   gunicorn
