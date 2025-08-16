@@ -21,6 +21,7 @@ urlpatterns = [
     # path('', cache_page(30)(BlogArchivo.as_view()), name='home'),
     path('mapa/', mapa, name='mapa'),
     path('admin/', admin.site.urls),
+    path('__debug__/', include('debug_toolbar.urls')),
     path('rss/', BlogFeed()),
     path('<slug:cat>/<slug:slug>/', EntradaIndividual.as_view(), name='post'),    
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}), # Pass sitemap function directly
