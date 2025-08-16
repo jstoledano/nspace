@@ -102,7 +102,7 @@ class BlogFeed(Feed):
     site = 'https://namespace'
 
     item_author_name = 'Javier Sanchez Toledano'
-    item_author_email = 'javier@namespace.mx'
+    item_author_email = 'javier@toledano.dev'
     item_author_link = 'http://yo.toledano.org' #URI of author
 
     def items(self):

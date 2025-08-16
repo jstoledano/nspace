@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 #         name: mx.namespace.blog.models
 #       author: Javier Sanchez Toledano
-#        email: javier@namespace.mx
-#          url: http://namespace.mx
-#  description: Modelos básicos para el blog namespace.mx
+#        email: javier@toledano.dev
+#          url: http://toledano.dev
+#  description: Modelos básicos para el blog toledano.dev
 #      version: 0.1.0
 
 # Configuración ConxB

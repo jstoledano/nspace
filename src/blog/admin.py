@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 #         name: com.conxb.blog.admin
 #       author: Javier Sanchez Toledano
-#        email: javier@namespace.mx
-#          url: http://namespace.mx
-#  description: Módulo de administración para el blog namespace.mx
+#        email: javier@toledano.dev
+#          url: http://toledano.dev
+#  description: Módulo de administración para el blog toledano.dev
 #      version: 0.1.0
 
 # Modulo de administracion
