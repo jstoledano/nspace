@@ -37,6 +37,5 @@ django-environ
 # Utilities
 beautifulsoup4
 Markdown
-bitly-api
 django-annoying
 django-humanize

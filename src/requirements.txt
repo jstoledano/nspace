@@ -12,8 +12,6 @@ beautifulsoup4==4.13.4
     # via -r src/requirements.in
 billiard==4.2.1
     # via celery
-bitly-api==0.3
-    # via -r src/requirements.in
 celery==5.5.3
     # via -r src/requirements.in
 click==8.2.1
