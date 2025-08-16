@@ -104,7 +104,7 @@ WSGI_APPLICATION = 'namespace.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
 LANGUAGE_CODE = 'es-mx'
-TIME_ZONE = 'Mexico/General'
+TIME_ZONE = 'America/Mexico_City'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
