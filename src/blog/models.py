@@ -23,17 +23,17 @@ MD_EXT = ['codehilite', 'meta', 'abbr', 'attr_list', 'def_list', 'fenced_code', 
           'headerid', 'sane_lists', 'extra', 'smartypants', 'toc', 'admonition']
 
 
-class Categoria(TimeStampedModel):
+class Category(TimeStampedModel):
     title = models.CharField('Título', max_length=250, help_text="Máximo 250 caracteres")
     slug = models.SlugField(unique=True, max_length=60, help_text="Se sugiere el texto generado por el título. Debe ser único.")
     description = models.TextField('Descripción')
 
     class Meta:
         ordering = ['title']
-        verbose_name_plural = "Categorías"
-        verbose_name = 'Categoría'
+        verbose_name_plural = "Categories"
+        verbose_name = 'Category'
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def permalink(self):
@@ -71,7 +71,7 @@ class Entry(TimeStampedModel):
     status          = models.IntegerField(choices=STATUS_CHOICES, default=LIVE_STATUS)
 
     # Taxonomía
-    category        = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    category        = models.ForeignKey(Category, on_delete=models.CASCADE)
     tags            = TaggableManager()
 
     # Seguimiento
@@ -83,7 +83,7 @@ class Entry(TimeStampedModel):
         ordering            = ['-id', '-pub_date']
         unique_together     = ('slug', 'pub_date')
 
-    def __unicode__ (self):
+    def __str__ (self):
         return self.title
 
     def save(self, force_insert=False, force_update=False):  # pylint: disable=W0221, E1002
