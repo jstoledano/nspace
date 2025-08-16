@@ -7,16 +7,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDER_PROTOCOL', 'https')
 ALLOWED_HOSTS = ['namespace.mx', '192.3.90.48', 'hydra.namespace.mx', 'www.namespace.mx', '127.0.0.1', 'localhost']
 INTERNAL_IPS = ("127.0.0.1",)
 
-DATABASES = {
-    "default": {
-    "ENGINE": "django.db.backends.postgresql_psycopg2",
-    "NAME": "nspace",
-    "USER": "javier",
-    "PASSWORD": "s4p0dr1l0+N!",
-    "HOST": "localhost",
-    "PORT": "5432",
-    }
-}
+
 
 CACHES = {
     "default": {
