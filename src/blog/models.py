@@ -27,6 +27,7 @@ class Category(TimeStampedModel):
     title = models.CharField('Título', max_length=250, help_text="Máximo 250 caracteres")
     slug = models.SlugField(unique=True, max_length=60, help_text="Se sugiere el texto generado por el título. Debe ser único.")
     description = models.TextField('Descripción')
+    icon = models.CharField('Icono', max_length=50, blank=True, help_text="Nombre del icono de FontAwesome o similar (ej. coffee, music)")
 
     class Meta:
         ordering = ['title']
