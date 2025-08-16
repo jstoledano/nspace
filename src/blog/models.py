@@ -45,13 +45,15 @@ class Category(TimeStampedModel):
 
 
 class Entry(TimeStampedModel):
-    LIVE_STATUS     = 1
-    DRAFT_STATUS    = 2
-    HIDDEN_STATUS   = 3
-    STATUS_CHOICES = (
-        (LIVE_STATUS,     'Live'),
-        (DRAFT_STATUS,   'Draft'),
-        (HIDDEN_STATUS, 'Hidden'),
+    class EntryStatus(models.TextChoices):
+        LIVE = 'LIVE', 'Live'
+        DRAFT = 'DRAFT', 'Draft'
+        HIDDEN = 'HIDDEN', 'Hidden'
+
+    status = models.CharField(
+        max_length=10,
+        choices=EntryStatus.choices,
+        default=EntryStatus.LIVE,
     )
     # Campos principales
     title           = models.CharField('Título', max_length=250)
