@@ -105,5 +105,5 @@ class Entry(TimeStampedModel):
         return "/%s/%s/" % (self.category.slug, self.slug)
 
     def get_absolute_url (self):
-        return "https://namespace.mx/%s/%s/" % (self.category.slug, self.slug)
+        return "https://toledano.dev/%s/%s/" % (self.category.slug, self.slug)
         
