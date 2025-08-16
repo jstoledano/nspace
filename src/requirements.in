@@ -33,3 +33,6 @@ django-debug-toolbar
 django-braces
 django-taggit
 django-environ
+
+# Utilities
+beautifulsoup4
