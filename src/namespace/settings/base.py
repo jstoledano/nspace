@@ -55,7 +55,7 @@ DATABASES = {
 
 # Application definition
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -65,14 +65,13 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.sites',
     'django.contrib.flatpages',
-    'bootstrap_pagination',
     'taggit_templatetags',
 
     'core',
     'blog',
 
     'taggit',
-)
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
