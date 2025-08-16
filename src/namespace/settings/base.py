@@ -20,9 +20,23 @@ STATIC_ROOT = PROJECT_DIR.child("static")
 STATICFILES_DIRS = (
     PROJECT_DIR.child("assets"),
 )
-TEMPLATE_DIRS = (
-    PROJECT_DIR.child("templates"),
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            PROJECT_DIR.child("templates"),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -31,11 +45,6 @@ SECRET_KEY = 'c_@a3lqj$4xn_+gltjcp4*nj5*8@zqdj750t-bu##yeau1f5p_'
 
 SITE_ID = 1
 ALLOWED_HOSTS = []
-
-import django.conf.global_settings as DEFAULT_SETTINGS
-TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
-    "django.core.context_processors.request",
-)
 
 
 # Application definition
@@ -59,15 +68,16 @@ INSTALLED_APPS = (
     'taggit',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
-)
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+]
 
 ROOT_URLCONF = 'namespace.urls'
 WSGI_APPLICATION = 'namespace.wsgi.application'
