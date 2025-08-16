@@ -13,12 +13,8 @@ from .models import Entry, Categoria
 # Desde Django, utilerías y atajos
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator # pylint: disable=W0611
-from annoying.decorators import render_to
-
-#Desde Django, renderizado de vistas y plantillas
-from django.template import RequestContext
 from django.template.defaultfilters import slugify
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.shortcuts import get_object_or_404, get_list_or_404
@@ -94,9 +90,7 @@ class TagListView(ListView):
             return context
 
 def tags_list(request):
-    return render_to_response ('koding/tag_list.html',
-        {'title': 'Lista de Etiquetas'},
-        context_instance=RequestContext(request))
+    return render(request, 'koding/tag_list.html', {'title': 'Lista de Etiquetas'})
 
 
 class BlogFeed(Feed):
