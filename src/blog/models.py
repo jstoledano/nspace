@@ -91,11 +91,11 @@ class Entry(TimeStampedModel):
         return self.title
 
     def save(self, force_insert=False, force_update=False):  # pylint: disable=W0221, E1002
-        self.body_html = markdown.markdown(self.body, output_format='html5', lazy_ol=True, extensions=MD_EXT)
+        self.body_html = markdown.markdown(self.body, extensions=MD_EXT)
         if self.excerpt:
-            self.excerpt_html = markdown.markdown(self.excerpt, output_format='html5', lazy_ol=True, extensions=MD_EXT)
+            self.excerpt_html = markdown.markdown(self.excerpt, extensions=MD_EXT)
         if self.extend:
-            self.extend_html  = markdown.markdown(self.extend, output_format='html5', lazy_ol=True, extensions=MD_EXT)
+            self.extend_html  = markdown.markdown(self.extend, extensions=MD_EXT)
         super(Entry, self).save(force_insert, force_update)
 
     def resumen(self):
