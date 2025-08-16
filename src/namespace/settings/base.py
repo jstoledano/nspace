@@ -59,6 +59,8 @@ SECRET_KEY = 'c_@a3lqj$4xn_+gltjcp4*nj5*8@zqdj750t-bu##yeau1f5p_'
 SITE_ID = 1
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 DATABASES = {
