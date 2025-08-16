@@ -12,19 +12,32 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # import os
 # BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-from unipath import Path
-PROJECT_DIR = Path(__file__).ancestor(3)
-MEDIA_ROOT = PROJECT_DIR.child("media")
-STATIC_URL = '/assets/'
-STATIC_ROOT = PROJECT_DIR.child("static")
-STATICFILES_DIRS = (
-    PROJECT_DIR.child("assets"),
+import environ
+from pathlib import Path
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+# Initialize django-environ
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
 )
+# The .env file should be in the src/ directory (which is BASE_DIR)
+environ.Env.read_env(BASE_DIR / '.env')
+
+
+MEDIA_ROOT = BASE_DIR / "media"
+STATIC_URL = '/assets/'
+STATIC_ROOT = BASE_DIR / "static"
+STATICFILES_DIRS = [
+    BASE_DIR / "assets",
+]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            PROJECT_DIR.child("templates"),
+            BASE_DIR / "templates",
         ],
         'APP_DIRS': True,
         'OPTIONS': {
