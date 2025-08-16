@@ -32,3 +32,4 @@ gunicorn
 django-debug-toolbar
 django-braces
 django-taggit
+django-environ

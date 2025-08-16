@@ -91,7 +91,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-BITLY_LOGIN = 'conxb'
-BITLY_API_KEY = '2e7945efaa9194c79a57f99e0f25084ce2ed8c97'
+BITLY_LOGIN = env('BITLY_LOGIN', default='')
+BITLY_API_KEY = env('BITLY_API_KEY', default='')
 
 

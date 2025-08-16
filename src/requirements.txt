@@ -34,6 +34,8 @@ django-braces==1.17.0
     # via -r src/requirements.in
 django-debug-toolbar==6.0.0
     # via -r src/requirements.in
+django-environ==0.12.0
+    # via -r src/requirements.in
 django-taggit==6.1.0
     # via -r src/requirements.in
 gunicorn==23.0.0

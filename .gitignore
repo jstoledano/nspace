@@ -27,3 +27,6 @@ db.sqlite3
 # Dependencias (si se usa un entorno virtual)
 venv/
 env/
+
+# Archivos de entorno - ¡No incluir secretos en git!
+src/.env
