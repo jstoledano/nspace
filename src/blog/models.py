@@ -74,11 +74,11 @@ class Entry(TimeStampedModel):
     status          = models.IntegerField(choices=STATUS_CHOICES, default=LIVE_STATUS)
 
     # Taxonomía
-    category        = models.ForeignKey(Categoria)
+    category        = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     tags            = TaggableManager()
 
     # Seguimiento
-    autor           = models.ForeignKey(User, related_name='entradas', editable=False)
+    autor           = models.ForeignKey(User, related_name='entradas', editable=False, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = 'Entradas'
