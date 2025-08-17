@@ -19,7 +19,7 @@ import datetime
 import markdown
 
 
-MD_EXT = ['codehilite', 'meta', 'abbr', 'attr_list', 'def_list', 'fenced_code', 'footnotes', 'smart_strong', 'tables',
+MD_EXT = ['codehilite', 'meta', 'abbr', 'attr_list', 'def_list', 'fenced_code', 'footnotes', 'tables',
           'headerid', 'sane_lists', 'extra', 'smartypants', 'toc', 'admonition']
 
 
