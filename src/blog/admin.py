@@ -25,7 +25,7 @@ class EntryAdmin(admin.ModelAdmin): # pylint: disable=R0904
         obj.autor = request.user
         obj.save()
         
-class CategoriaAdmin (admin.ModelAdmin): # pylint: disable=R0904
+class CategoryAdmin (admin.ModelAdmin): # pylint: disable=R0904
     prepopulated_fields = {'slug': ['title']} 
 
 admin.site.register(Entry, EntryAdmin)
