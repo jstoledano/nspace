@@ -72,7 +72,11 @@ class Entry(TimeStampedModel):
     enable_comments = models.BooleanField(default=True)
     featured        = models.BooleanField(default=False)
     slug            = models.SlugField(unique_for_date='pub_date')
-    status          = models.IntegerField(choices=STATUS_CHOICES, default=LIVE_STATUS)
+    status = models.CharField(
+        max_length=10,
+        choices=EntryStatus.choices,
+        default=EntryStatus.LIVE,
+    )
 
     # Taxonomía
     category        = models.ForeignKey(Category, on_delete=models.CASCADE)
