@@ -10,7 +10,7 @@
 from django.contrib import admin
 
 # Módulos de la aplicacion
-from blog.models import Entry, Categoria
+from blog.models import Entry, Category
 
 class EntryAdmin(admin.ModelAdmin): # pylint: disable=R0904
     prepopulated_fields = {"slug": ("title",)}

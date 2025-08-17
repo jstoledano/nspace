@@ -8,7 +8,7 @@
 
 ## MÓDULOS
 # Entradas, modelo y formulario
-from .models import Entry, Categoria
+from .models import Entry, Category
 
 # Desde Django, utilerías y atajos
 from django.contrib.auth.decorators import login_required
@@ -30,7 +30,7 @@ from django.views.decorators.cache import cache_page
 ## CLASES
 # Clases genéricas
 class BlogArchivo(ListView):
-    queryset = Entry.objects.select_related('category__slug', 'tags').order_by('-pub_date', 'id')
+    queryset = Entry.objects.select_related('category').order_by('-pub_date', 'id')
     paginate_by = 6
     template_name = 'koding/index.html'
 
@@ -48,8 +48,7 @@ class EntradaIndividual(DetailView):
         return context
 
 
-
-class CategoriaList(ListView):
+class CategoryList(ListView):
     paginate_by = 5
     template_name = "koding/category.html"
     make_object_list = True
@@ -60,9 +59,7 @@ class CategoriaList(ListView):
         return Entry.objects.filter(category=self.cat).select_related().order_by('-pub_date', 'id')
 
     def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
         context = super(CategoryList, self).get_context_data(**kwargs)
-        # Add in the publisher
         context['cat'] = self.cat
         context['cats'] = self.cat.slug
         context['mnTemas'] = True
@@ -80,9 +77,7 @@ class TagListView(ListView):
         return self.entries
 
     def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
         context = super(TagListView, self).get_context_data(**kwargs)
-        # Add in the publisher
         try:
             context['tag'] = self.entries[0].tags.all().filter(slug=self.kwargs['tag_slug'])[0]
             return context

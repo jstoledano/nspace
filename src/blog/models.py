@@ -19,7 +19,7 @@ import datetime
 import markdown
 
 
-MD_EXT = ['codehilite', 'meta', 'extra', 'smartypants', 'toc', 'admonition']
+MD_EXT = ['codehilite', 'meta', 'extra', 'toc', 'admonition']
 
 
 class Category(TimeStampedModel):

@@ -4,7 +4,7 @@ from django.views.decorators.cache import cache_page
 from django.conf import settings
 from django.conf.urls.static import static # For static files in debug mode
 
-from blog.views import BlogArchivo, EntradaIndividual, CategoriaList, TagListView, tags_list
+from blog.views import BlogArchivo, EntradaIndividual, CategoryList, TagListView, tags_list
 from blog.views import BlogFeed
 from blog.views import BlogSitemap
 
@@ -28,7 +28,8 @@ urlpatterns = [
     path('robots.txt', robots),
     path('tag/', tags_list, name='tags'),
     path('tag/<slug:tag_slug>', TagListView.as_view(), name='tag'),
-    path('cats/', CategoryList.as_view(), name="category"),
+    # path('cats/', CategoryList.as_view(), name="categories"),
+    path('cats/<slug:cat>', CategoryList.as_view(), name='category'),
 ]
 
 # error404 = "core.views.error404" # This is not how 404 handlers are defined anymore

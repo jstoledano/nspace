@@ -4,7 +4,7 @@ from django.contrib.flatpages.models import FlatPage
 from django.views.decorators.cache import cache_page
 
 from blog.models import Entry
-from blog.models import Categoria
+from blog.models import Category
 
 
 # Vistas
