@@ -105,8 +105,8 @@ class Entry(TimeStampedModel):
             return str(self.body_html)
 
     def permalink(self):
-        return "/%s/%s/" % (self.category.slug, self.slug)
+        return "/category/%s/%s/" % (self.category.slug, self.slug)
 
     def get_absolute_url (self):
-        return "https://toledano.dev/%s/%s/" % (self.category.slug, self.slug)
+        return "https://toledano.dev/category/%s/%s/" % (self.category.slug, self.slug)
         
