@@ -61,7 +61,7 @@ class CategoriaList(ListView):
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
-        context = super(CategoriaList, self).get_context_data(**kwargs)
+        context = super(CategoryList, self).get_context_data(**kwargs)
         # Add in the publisher
         context['cat'] = self.cat
         context['cats'] = self.cat.slug

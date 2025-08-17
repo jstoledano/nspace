@@ -29,4 +29,4 @@ class CategoriaAdmin (admin.ModelAdmin): # pylint: disable=R0904
     prepopulated_fields = {'slug': ['title']} 
 
 admin.site.register(Entry, EntryAdmin)
-admin.site.register(Categoria, CategoriaAdmin)
+admin.site.register(Category, CategoryAdmin)

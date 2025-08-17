@@ -23,7 +23,7 @@ def robots (request): # pylint: disable=W0613
 @cache_page(60 * 60 * 6)
 def mapa(request):
     flats = FlatPage.objects.all()
-    cats = Categoria.objects.all()
+    cats = Category.objects.all()
     meses = Entry.objects.datetimes('pub_date', 'month', order='DESC')
     entries = Entry.objects.all().order_by('-pub_date','id')[:100]
     return render(request, 'koding/mapa.html', {'flats': flats, 'cats':cats, 'meses':meses, 'entries':entries})

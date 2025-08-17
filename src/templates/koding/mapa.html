@@ -22,7 +22,7 @@
     <h3>Categorías</h3>
     <ul>
       {% for cat in cats %}
-        <li><a href="{% url "categoria" cat.slug %}">{{cat.title}}</a></li>
+        <li><a href="{% url "category" cat.slug %}">{{cat.title}}</a></li>
       {% endfor %}
     </ul>
     <h3>Meses</h3>

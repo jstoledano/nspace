@@ -28,7 +28,7 @@ urlpatterns = [
     path('robots.txt', robots),
     path('tag/', tags_list, name='tags'),
     path('tag/<slug:tag_slug>', TagListView.as_view(), name='tag'),
-    path('cats/', CategoriaList.as_view(), name="categoria"),
+    path('cats/', CategoryList.as_view(), name="category"),
 ]
 
 # error404 = "core.views.error404" # This is not how 404 handlers are defined anymore
