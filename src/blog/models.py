@@ -16,7 +16,6 @@ from django.contrib.auth.models import User
 # Desde Python
 from taggit.managers import TaggableManager
 import datetime
-from django.utils import timezone
 import markdown
 
 
