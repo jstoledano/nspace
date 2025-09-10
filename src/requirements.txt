@@ -9,11 +9,11 @@ amqp==5.3.1
 asgiref==3.9.1
     # via django
 beautifulsoup4==4.13.4
-    # via -r src/requirements.in
+    # via -r requirements.in
 billiard==4.2.1
     # via celery
 celery==5.5.3
-    # via -r src/requirements.in
+    # via -r requirements.in
 click==8.2.1
     # via
     #   celery
@@ -26,34 +26,34 @@ click-plugins==1.1.1.2
     # via celery
 click-repl==0.3.0
     # via celery
-django==4.2.23
+django==4.2.24
     # via
-    #   -r src/requirements.in
+    #   -r requirements.in
     #   django-annoying
     #   django-braces
     #   django-debug-toolbar
     #   django-humanize
     #   django-taggit
 django-annoying==0.10.8
-    # via -r src/requirements.in
+    # via -r requirements.in
 django-braces==1.17.0
-    # via -r src/requirements.in
+    # via -r requirements.in
 django-debug-toolbar==6.0.0
-    # via -r src/requirements.in
+    # via -r requirements.in
 django-environ==0.12.0
-    # via -r src/requirements.in
+    # via -r requirements.in
 django-humanize==0.1.2
-    # via -r src/requirements.in
+    # via -r requirements.in
 django-taggit==6.1.0
-    # via -r src/requirements.in
+    # via -r requirements.in
 gunicorn==23.0.0
-    # via -r src/requirements.in
+    # via -r requirements.in
 humanize==4.12.3
     # via django-humanize
 kombu==5.5.4
     # via celery
 markdown==3.8.2
-    # via -r src/requirements.in
+    # via -r requirements.in
 packaging==25.0
     # via
     #   gunicorn
@@ -61,13 +61,13 @@ packaging==25.0
 prompt-toolkit==3.0.51
     # via click-repl
 psycopg2-binary==2.9.10
-    # via -r src/requirements.in
+    # via -r requirements.in
 python-dateutil==2.9.0.post0
     # via celery
 python-memcached==1.62
-    # via -r src/requirements.in
+    # via -r requirements.in
 redis==6.4.0
-    # via -r src/requirements.in
+    # via -r requirements.in
 six==1.17.0
     # via
     #   django-annoying
