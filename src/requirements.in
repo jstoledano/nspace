@@ -13,7 +13,7 @@
 #
 
 # Core Framework
-Django~=4.2.0
+Django~=4.2.27
 
 # Database
 psycopg2-binary
